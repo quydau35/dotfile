@@ -108,8 +108,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-# AMBERTOOL14
-#source /home/quyngan/Packages/amber14/amber.sh
 
 # GROMACS
 export PATH=$PATH:/usr/bin:/usr/local/gromacs/bin
@@ -121,9 +119,9 @@ export PATH=$PATH:/usr/bin:/usr/local/gromacs/bin
 #export ATISTREAMSDKROOT=$AMDAPPSDKROOT
 
 # TeXlive package
-export MANPATH=/home/quyngan/.texlive/2015/texmf-dist/doc/man:$MANPATH
-export INFOPATH=/home/quyngan/.texlive/2015/texmf-dist/doc/info:$INFOPATH
-export PATH=/home/quyngan/.texlive/2015/bin/x86_64-linux:$PATH
+export MANPATH=/usr/local/texlive/2015/texmf-dist/doc/man:$MANPATH
+export INFOPATH=/usr/local/texlive/2015/texmf-dist/doc/info:$INFOPATH
+export PATH=/usr/local/texlive/2015/bin/x86_64-linux:$PATH
 
 # Opera
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu/
@@ -135,19 +133,24 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu/
 #source /home/quyngan/.gromacs-5.1/bin/GMXRC
 
 # Android NDK/SDK/Studio v.v...
-export ANDROIDSDK="/home/quyngan/Android/android-sdk-linux"
-export ANDROIDNDK="/home/quyngan/Android/android-ndk-r10e"
-export ANDROIDNDKVER=r10e
-export ADNROIDAPI=23
-export PATH=$PATH:$ANDROIDNDK:$ANDROIDSDK/platform-tools:$ANDROIDSDK/tools
+#export ANDROIDSDK="/home/quyngan/Android/android-sdk-linux"
+#export ANDROIDNDK="/home/quyngan/Android/android-ndk-r10e"
+#export ANDROIDNDKVER=r10e
+#export ADNROIDAPI=23
+#export PATH=$PATH:$ANDROIDNDK:$ANDROIDSDK/platform-tools:$ANDROIDSDK/tools
 #:/home/quyngan/Android/android-studio/bin/studio.sh
 
 # JAVA 8 home
-export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_60
+#export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_60
 
 # Tmuxinator config
 export EDITOR='vim'
 
+#AMBER path
 export AMBERHOME=/usr/local/lib/python2.7/dist-packages/labpi
 export PATH=$AMBERHOME/bin:$PATH
+# AMBERTOOL14
+source /home/quyngan/.amber14/amber.sh
 
+# VMD path
+export PATH=/home/quyngan/.vmd-1.9.2:$PATH
