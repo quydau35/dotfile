@@ -1,4 +1,5 @@
 # get all dot files
+cd ~/
 git init
 git clone https://github.com/quydau35/dotfile.git
 
@@ -16,4 +17,7 @@ sudo apt-get install flex bison tcsh gfortran g++ xorg-dev libbz2-dev libopenmpi
 export AMBERHOME='/home/quyngan/.amber14'
 cd ~/.amber14
 ./configure -openmp gnu
+make install
 
+# install ViLAS
+sudo apt-get install pip pymol avogadro grace openbabel gromacs 
