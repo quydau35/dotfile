@@ -129,8 +129,8 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu/
 # SCWRL4
 #export PATH=$PATH:/home/quyngan/.SCWRL4
 
-# GROMACS 5.0.4
-#source /home/quyngan/.gromacs-5.1/bin/GMXRC
+# GROMACS 5.1.1
+source /usr/local/gromacs/bin/GMXRC
 
 # Android NDK/SDK/Studio v.v...
 #export ANDROIDSDK="/home/quyngan/Android/android-sdk-linux"
