@@ -128,9 +128,17 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu/
 
 # SCWRL4
 #export PATH=$PATH:/home/quyngan/.SCWRL4
-
 # GROMACS 5.1.1
 source /usr/local/gromacs/bin/GMXRC
+#AMBER path
+export AMBERHOME=/usr/local/lib/python2.7/dist-packages/labpi
+export PATH=$AMBERHOME/bin:$PATH
+# AMBERTOOL14
+source /home/quyngan/.amber14/amber.sh
+# VMD path
+export PATH=$PATH:/home/quyngan/.vmd-1.9.2
+# ADT path
+export PATH=$PATH:/home/quyngan/.mgltools_x86_64Linux2_1.5.6
 
 # Android NDK/SDK/Studio v.v...
 #export ANDROIDSDK="/home/quyngan/Android/android-sdk-linux"
@@ -145,12 +153,3 @@ source /usr/local/gromacs/bin/GMXRC
 
 # Tmuxinator config
 export EDITOR='vim'
-
-#AMBER path
-export AMBERHOME=/usr/local/lib/python2.7/dist-packages/labpi
-export PATH=$AMBERHOME/bin:$PATH
-# AMBERTOOL14
-source /home/quyngan/.amber14/amber.sh
-
-# VMD path
-export PATH=/home/quyngan/.vmd-1.9.2:$PATH
