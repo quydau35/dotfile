@@ -1,7 +1,7 @@
 # ~/.tmuxinator/bacteriocin.yml
 
 name: bacteriocin
-root: /media/quyngan/MYLINUXLIVE/bacteriocin/thoa/p28
+root: /home/quyngan/comobiophys/app/A01/run_A01
 
 # Optional tmux socket
 # socket_name: foo

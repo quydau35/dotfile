@@ -138,7 +138,7 @@ source /home/quyngan/.amber14/amber.sh
 # VMD path
 export PATH=$PATH:/home/quyngan/.vmd-1.9.2
 # ADT path
-export PATH=$PATH:/home/quyngan/.mgltools_x86_64Linux2_1.5.6
+export PATH=$PATH:/home/quyngan/.mgltools_x86_64Linux2_1.5.6/bin
 
 # Android NDK/SDK/Studio v.v...
 #export ANDROIDSDK="/home/quyngan/Android/android-sdk-linux"
@@ -153,3 +153,6 @@ export PATH=$PATH:/home/quyngan/.mgltools_x86_64Linux2_1.5.6
 
 # Tmuxinator config
 export EDITOR='vim'
+
+# Add QCAD to path
+export PATH=$PATH:/home/quyngan/opt/qcad-3.12.5-linux-x86_64
