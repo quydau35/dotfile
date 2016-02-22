@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=5000
+HISTFILESIZE=10000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -61,7 +61,7 @@ if [ "$color_prompt" = yes ]; then
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
-unset color_prompt force_color_prompt
+#unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -85,9 +85,9 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-#alias ll='ls -l'
-#alias la='ls -A'
-#alias l='ls -CF'
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -139,6 +139,7 @@ source /home/quyngan/.amber14/amber.sh
 export PATH=$PATH:/home/quyngan/.vmd-1.9.2
 # ADT path
 export PATH=$PATH:/home/quyngan/.mgltools_x86_64Linux2_1.5.6/bin
+export LD_LIBRARY_PATH=/home/quyngan/.mgltools_x86_64Linux2_1.5.6/lib:${LD_LIBRARY_PATH}
 
 # Android NDK/SDK/Studio v.v...
 #export ANDROIDSDK="/home/quyngan/Android/android-sdk-linux"
