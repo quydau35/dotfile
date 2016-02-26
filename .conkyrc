@@ -1,0 +1,95 @@
+# Conky settings #
+background no
+update_interval 1
+
+cpu_avg_samples 2
+net_avg_samples 2
+
+override_utf8_locale yes
+
+double_buffer yes
+no_buffers yes
+
+text_buffer_size 2048
+#imlib_cache_size 0
+
+temperature_unit Celcius
+
+# Window specifications #
+
+own_window yes
+own_window_transparent yes
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+
+border_inner_margin 0
+border_outer_margin 0
+
+# Minimum size of text area -adjust if you would like to user smaller fonts etc.
+minimum_size 320 0
+maximum_width 320
+max_specials 1024
+max_user_text 16384
+default_bar_size 215 5
+
+alignment tr
+gap_x 35
+gap_y 55
+
+# Graphics settings #
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+# Text settings #
+use_xft yes
+xftfont caviar dreams:size=8
+xftalpha 0.5
+
+uppercase no
+
+default_color FFFFFF
+
+# -- Lua Load -- # - removed in conky builder > 1.15
+lua_load ~/.conky/clock_rings.lua
+lua_draw_hook_pre clock_rings
+
+# -- Album art fix -- #
+imlib_cache_size 0
+
+TEXT
+${voffset 8}${color 339900}${font caviar dreams:size=16}${time %A}${font}${voffset -8}${alignr 50}${color FFFFFF}${font caviar dreams:size=38}${time %e}${font}
+${color FFFFFF}${voffset -30}${color FFFFFF}${font caviar dreams:size=18}${time %B}${font}${voffset -3} ${color FFFFFF}${font caviar dreams:size=20}${time %Y}${font}${color 339900}${hr}
+${voffset 40}${font caviar dreams:size=10}${alignr}Ho Chi Minh City${font}
+${font caviar dreams:size=12}${color FFFFFF}${alignr}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ VVTS temperature temperature 30} °C${font}
+${image ~/.conky/new-ubuntu-logo.png -p 60,120 -s 81x27}
+${goto 180}${color FF00FF}${font Liberation:style=Bold:pixelsize=12}SYSTEM ${color 339900}${hr 2 }
+${alignr}${font}${color FFFFFF}Processes: ${color 339900}$processes
+${alignr}${font}${color FFFFFF}Uptime: ${color 339900}${font Liberation:style=normal:pixelsize=10}${uptime}
+${alignr}quyngan@$nodename
+${color FFFFFF}${font Liberation:style=normal:pixelsize=12}${alignr}Ubuntu 14.04 - ${alignr}$kernel 64 Bit
+${color FF00FF}${font Liberation:style=Bold:pixelsize=12}CPU${color 339900}${hr 1 }
+${color FFFFFF}${goto 6}${font}${voffset -3}${goto 18}${font}${goto 18}Intel(R) Core(TM) i5-3337U CPU @ 1.80GHz
+${color FFFFFF}${goto 18}${font}CPU Temperature: ${font Liberation:style=normal:pixelsize=12} ${color 339900}${acpitemp} °C
+${color FFFFFF}${goto 18}${font}CPU Usage: ${font Liberation:style=normal:pixelsize=12} ${color 339900}${freq}MHz X 4${alignr}${color FF0000}${cpu cpu0}%  ${cpubar cpu0 6,60}
+${color FF00FF}${font Liberation:style=Bold:pixelsize=12}RAM${color 339900}${hr 1 }
+${goto 18}${color FFFFFF}${font Liberation:style=normal:pixelsize=12}Usage: ${color 339900}${font Liberation:style=normal:pixelsize=12}$mem / $memmax ${alignr}${color FF0000}${font Liberation:style=normal:pixelsize=12}$memperc% ${membar 6,60}
+${font}${voffset -3}${goto 18}${color FFFFFF}${font Liberation:style=normal:pixelsize=12}Swap: ${color 339900}${font Liberation:style=normal:pixelsize=12}$swap/$swapmax${color FF0000}${alignr}$swapperc% ${swapbar 6,60}
+${font}${voffset -3}${goto 18}${color FFFFFF}${font Liberation:style=normal:pixelsize=12}${goto 18}Highest: ${color 339900}${alignr}CPU     RAM
+${goto 18}${voffset -5.5}${hr 1}
+${color FF0000}${font Liberation:style=normal:pixelsize=12}${voffset -1}${goto 18}${top name 1}${alignr}${top cpu 1}  ${top mem 1}
+${goto 18}${top name 2}${alignr}${top cpu 2}  ${top mem 2}
+${goto 18}${top name 3}${alignr}${top cpu 3}  ${top mem 3}
+${color FF00FF}${font Liberation:style=Bold:pixelsize=12}FILESYSTEM(s)${color 339900}${hr 1 }
+${font}${voffset -3}${goto 18}${color FFFFFF}${font Liberation:style=normal:pixelsize=12}Disk I/O: ${color 339900}${font Liberation:style=normal:pixelsize=12}${diskio}${alignr}${color FF0000}${diskiograph 19,215 00FF00 FF0000 -t}
+${font}${voffset -3}${goto 18}${color FFFFFF}${font Liberation:style=normal:pixelsize=12}Root (/dev/sda3): ${color 339900}${font Liberation:style=normal:pixelsize=12}${fs_free /} / ${fs_size /}${alignr}${color FF0000}${fs_used_perc /}% ${fs_bar 6,60 /}
+${color FF00FF}${font Liberation:style=Bold:pixelsize=12}NETWORK:${color 339900}${hr 1 }
+${color FF00FF}${font Liberation:style=Bold:pixelsize=12}wlan0
+${goto 18}${voffset -3}${color #ff0000}${font Liberation:style=normal:pixelsize=12}Up: ${upspeed wlan0} ${color #ff0000}${alignr}${voffset -3}${upspeedgraph wlan0 19,215 00FF00 FF0000 -t}
+${goto 18}${voffset -3}${color #ff0000}${font Liberation:style=normal:pixelsize=12}Down: ${downspeed wlan0} ${color #ff0000}${alignr}${voffset -3}${downspeedgraph wlan0 19,215 00FF00 FF0000 -t}
+${color FF00FF}${font Liberation:style=Bold:pixelsize=12}eth0
+${goto 18}${voffset -3}${color #ff0000}${font Liberation:style=normal:pixelsize=12}Up: ${upspeed eth0} ${color #ff0000}${alignr}${voffset -3}${upspeedgraph eth0 19,215 00FF00 FF0000 -t}
+${goto 18}${voffset -3}${color #ff0000}${font Liberation:style=normal:pixelsize=12}Down: ${downspeed eth0} ${color #ff0000}${alignr}${voffset -3}${downspeedgraph eth0 19,215 00FF00 FF0000 -t}
+${goto 18}${voffset -3}${font}Local IP: ${addr eth0}${alignr}${font}${voffset 2}${font Stylebats:pixelsize=12}M${font}TCP Connections: ${color #ff0000}${font Liberation:style=normal:pixelsize=12}${tcp_portmon 1 65535 count}
+${color ff0000}${font Liberation:style=Bold:pixelsize=12}${voffset -3}${hr 2}
+${color ff0000}${font Liberation:style=Bold:pixelsize=12}${voffset -3}${hr 2}
