@@ -76,12 +76,12 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
 
-    #alias grep='grep --color=auto'
-    #alias fgrep='fgrep --color=auto'
-    #alias egrep='egrep --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
 fi
 
 # some more ls aliases
@@ -110,7 +110,7 @@ if ! shopt -oq posix; then
 fi
 
 # GROMACS
-export PATH=$PATH:/usr/bin:/usr/local/gromacs/bin
+export PATH=$PATH:/usr/local/gromacs/bin
 
 ## AMD APP SDK
 #export AMDAPPSDKROOT=/opt/AMDAPP
@@ -121,7 +121,7 @@ export PATH=$PATH:/usr/bin:/usr/local/gromacs/bin
 # TeXlive package
 export MANPATH=/usr/local/texlive/2015/texmf-dist/doc/man:$MANPATH
 export INFOPATH=/usr/local/texlive/2015/texmf-dist/doc/info:$INFOPATH
-export PATH=/usr/local/texlive/2015/bin/x86_64-linux:$PATH
+export PATH=$PATH:/usr/local/texlive/2015/bin/x86_64-linux
 
 # Opera
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu/
@@ -129,17 +129,17 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu/
 # SCWRL4
 #export PATH=$PATH:/home/quyngan/.SCWRL4
 # GROMACS 5.1.1
-source /usr/local/gromacs/bin/GMXRC
+#source /usr/local/gromacs/bin/GMXRC
 #AMBER path
-export AMBERHOME=/usr/local/lib/python2.7/dist-packages/labpi
-export PATH=$AMBERHOME/bin:$PATH
+#export AMBERHOME=/usr/local/lib/python2.7/dist-packages/labpi
+#export PATH=$PATH:$AMBERHOME/bin
 # AMBERTOOL14
 source /home/quyngan/.amber14/amber.sh
 # VMD path
 export PATH=$PATH:/home/quyngan/.vmd-1.9.2
 # ADT path
-export PATH=$PATH:/home/quyngan/.mgltools_x86_64Linux2_1.5.6/bin
-export LD_LIBRARY_PATH=/home/quyngan/.mgltools_x86_64Linux2_1.5.6/lib:${LD_LIBRARY_PATH}
+#export PATH=$PATH:/home/quyngan/.mgltools_x86_64Linux2_1.5.6/bin
+#export LD_LIBRARY_PATH=/home/quyngan/.mgltools_x86_64Linux2_1.5.6/lib:${LD_LIBRARY_PATH}
 
 # Android NDK/SDK/Studio v.v...
 #export ANDROIDSDK="/home/quyngan/Android/android-sdk-linux"
