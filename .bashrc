@@ -61,7 +61,7 @@ if [ "$color_prompt" = yes ]; then
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
-#unset color_prompt force_color_prompt
+unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -115,7 +115,7 @@ export PATH=$PATH:/usr/local/gromacs/bin
 ## AMD APP SDK
 #export AMDAPPSDKROOT=/opt/AMDAPP
 #export AMDAPPSDKSAMPLESROOT=/opt/AMDAPP/
-#export LD_LIBRARY_PATH=${AMDAPPSDKROOT}lib/x86_64:${LD_LIBRARY_PATH}
+#export LD_LIBRARY_PATH=${AMDAPPSDKROOT}lib/x86_64:$LD_LIBRARY_PATH
 #export ATISTREAMSDKROOT=$AMDAPPSDKROOT
 
 # TeXlive package
@@ -124,7 +124,10 @@ export INFOPATH=/usr/local/texlive/2015/texmf-dist/doc/info:$INFOPATH
 export PATH=$PATH:/usr/local/texlive/2015/bin/x86_64-linux
 
 # Opera
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu/
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu
+
+# Mendeley
+export PATH=$PATH:/home/quyngan/.mendeley/bin
 
 # SCWRL4
 #export PATH=$PATH:/home/quyngan/.SCWRL4
@@ -134,12 +137,12 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu/
 #export AMBERHOME=/usr/local/lib/python2.7/dist-packages/labpi
 #export PATH=$PATH:$AMBERHOME/bin
 # AMBERTOOL14
-source /home/quyngan/.amber14/amber.sh
+#source /home/quyngan/.amber14/amber.sh
 # VMD path
-export PATH=$PATH:/home/quyngan/.vmd-1.9.2
+export PATH=$PATH:/home/quyngan/.vmd/vmd-1.9.2
 # ADT path
-#export PATH=$PATH:/home/quyngan/.mgltools_x86_64Linux2_1.5.6/bin
-#export LD_LIBRARY_PATH=/home/quyngan/.mgltools_x86_64Linux2_1.5.6/lib:${LD_LIBRARY_PATH}
+export PATH=$PATH:/home/quyngan/.mgltools-2_1.5.6/bin
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/quyngan/.mgltools-2_1.5.6/lib
 
 # Android NDK/SDK/Studio v.v...
 #export ANDROIDSDK="/home/quyngan/Android/android-sdk-linux"
@@ -156,4 +159,8 @@ export PATH=$PATH:/home/quyngan/.vmd-1.9.2
 export EDITOR='vim'
 
 # Add QCAD to path
-export PATH=$PATH:/home/quyngan/opt/qcad-3.12.5-linux-x86_64
+#export PATH=$PATH:/home/quyngan/opt/qcad-3.12.5-linux-x86_64
+
+# GOPATH for drive
+export GOPATH=$HOME/Documents/.Drive
+export PATH=$GOPATH:$GOPATH/bin:$PATH
