@@ -287,7 +287,7 @@ if has('vim_starting')
 	"Syntax support
 	"NeoBundleLazy 'scrooloose/syntastic'
 	NeoBundle 'tpope/vim-surround'
-	NeoBundle 'ervandew/supertab'
+	"NeoBundle 'ervandew/supertab'
 	"NeoBundleLazy 'nathanaelkane/vim-indent-guides'
 	"NeoBundle 'Yggdroot/indentLine'
 	"NeoBundleLazy 'hublot/vim-gromacs'
@@ -338,4 +338,4 @@ map <C-n> :NERDTreeToggle<CR>
 "Android SDK
 let g:android_sdk_path = "/home/quyngan/Android/android-sdk-linux"
 let g:gradle_path = "/home/quyngan/Android/android-studio/gradle"
-let g:pymode_lint_ignore = "E501"
+let g:pymode_lint_ignore = "E501, E265, E251"
