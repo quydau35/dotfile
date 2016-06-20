@@ -1,7 +1,7 @@
 # ~/.tmuxinator/analyzer.yml
 
 name: analyzer
-root: ~/comobiophys/app/vilas/vilas/
+root: ~/Documents/vilas/vilas/vilas
 
 # Optional tmux socket
 # socket_name: foo

@@ -88,6 +88,7 @@ fi
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
+alias acpype='python /home/quyngan/Documents/vilas/vilas/vilas/source/acpype.py'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -115,7 +116,7 @@ export PATH=$PATH:/usr/local/gromacs/bin
 ## AMD APP SDK
 #export AMDAPPSDKROOT=/opt/AMDAPP
 #export AMDAPPSDKSAMPLESROOT=/opt/AMDAPP/
-#export LD_LIBRARY_PATH=${AMDAPPSDKROOT}lib/x86_64:${LD_LIBRARY_PATH}
+#export LD_LIBRARY_PATH=${AMDAPPSDKROOT}lib/x86_64:$LD_LIBRARY_PATH
 #export ATISTREAMSDKROOT=$AMDAPPSDKROOT
 
 # TeXlive package
@@ -134,15 +135,15 @@ export PATH=$PATH:/home/quyngan/.mendeley/bin
 # GROMACS 5.1.1
 #source /usr/local/gromacs/bin/GMXRC
 #AMBER path
-#export AMBERHOME=/usr/local/lib/python2.7/dist-packages/labpi
-#export PATH=$PATH:$AMBERHOME/bin
+export AMBERHOME=/home/quyngan/.amber14
+export PATH=$PATH:$AMBERHOME/bin
 # AMBERTOOL14
-#source /home/quyngan/.amber14/amber.sh
+source /home/quyngan/.amber14/amber.sh
 # VMD path
-#export PATH=$PATH:/home/quyngan/.vmd-1.9.2
+export PATH=$PATH:/home/quyngan/.vmd/vmd-1.9.2
 # ADT path
-#export PATH=$PATH:/home/quyngan/.mgltools_x86_64Linux2_1.5.6/bin
-#export LD_LIBRARY_PATH=/home/quyngan/.mgltools_x86_64Linux2_1.5.6/lib:${LD_LIBRARY_PATH}
+export PATH=$PATH:/home/quyngan/.mgltools-2_1.5.6/bin
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/quyngan/.mgltools-2_1.5.6/lib
 
 # Android NDK/SDK/Studio v.v...
 #export ANDROIDSDK="/home/quyngan/Android/android-sdk-linux"
@@ -161,6 +162,12 @@ export EDITOR='vim'
 # Add QCAD to path
 #export PATH=$PATH:/home/quyngan/opt/qcad-3.12.5-linux-x86_64
 
+# Add Eagle to path
+export PATH=$PATH:/home/quyngan/.eagle-7.6.0/bin
+
 # GOPATH for drive
 export GOPATH=$HOME/Documents/.Drive
 export PATH=$GOPATH:$GOPATH/bin:$PATH
+
+# unset LD_LIBRARY_PATH
+unset LD_LIBRARY_PATH
