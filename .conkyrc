@@ -18,8 +18,10 @@ temperature_unit celsius
 # Window specifications #
 
 own_window yes
-own_window_transparent no
+own_window_transparent yes
+own_window_type desktop
 own_window_hints undecorated,sticky,skip_taskbar,skip_pager,below
+own_window_class Conky
 
 border_inner_margin 0
 border_outer_margin 0
@@ -53,7 +55,34 @@ default_color FFFFFF
 # HDDTemp config
 hddtemp_host 127.0.0.1
 hddtemp_port 7634
+#====================================
+#   API Key
+#====================================
+template6 "a2aa59e7e360f340a7291333df4a866b"
 
+
+#====================================
+#   City ID
+#====================================
+template7 "1566083"
+
+
+#====================================
+#   Temp Unit (default, metric, imperial)
+#====================================
+template8 metric
+
+
+#====================================
+#   Locale (e.g. "es_ES.UTF-8")
+#   Leave empty for default
+#   Leave the quotes
+#====================================
+template9 ""
+
+
+###################################################
+###################################################
 # -- Lua Load -- # - removed in conky builder > 1.15
 lua_load ~/.conky/clock_rings.lua
 lua_draw_hook_pre clock_rings
@@ -65,7 +94,8 @@ TEXT
 ${voffset 8}${color 339900}${font caviar dreams:size=16}${time %A}${font}${voffset -8}${alignr 50}${color FFFFFF}${font caviar dreams:size=38}${time %e}${font}
 ${color FFFFFF}${voffset -30}${color FFFFFF}${font caviar dreams:size=18}${time %B}${font}${voffset -3} ${color FFFFFF}${font caviar dreams:size=20}${time %Y}${font}${color 339900}${hr}
 ${voffset 40}${font caviar dreams:size=10}${alignr}Ho Chi Minh City${font}
-${font caviar dreams:size=12}${color FFFFFF}${alignr}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ VVTS temperature temperature 30} °C${font}
+#${font caviar dreams:size=12}${color FFFFFF}${alignr}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ VVTS temperature temperature 30} °C${font}
+#${font caviar dreams:size=12}${color FFFFFF}${alignr}${execi 300 l=${template9}; l=${l%%_*}; curl -s "api.openweathermap.org/data/2.5/forecast/daily?APPID=${template6}&id=${template7}&cnt=5&units=${template8}&lang=$l" -o ~/.cache/forecast.json}\${font}
 ${image ~/.conky/new-ubuntu-logo.png -p 60,120 -s 81x27}
 ${goto 180}${color FF00FF}${font Liberation:style=Bold:pixelsize=12}SYSTEM ${color 339900}${hr 2 }
 ${alignr}${font}${color FFFFFF}Processes: ${color 339900}$processes
