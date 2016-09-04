@@ -1,9 +1,12 @@
-set wrap linebreak nolist  " list disables linebreak
-set textwidth=80
-set wrapmargin=1
+"set wrap linebreak nolist  " list disables linebreak
+"set textwidth=80
+"set wrapmargin=1
 set number
 set shiftwidth=4
 let mapleader=","
+if exists('&colorcolumn')
+    set colorcolumn=80
+endif
 " An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
@@ -48,7 +51,7 @@ map Q gq
 inoremap <C-U> <C-G>u<C-U>
 
 " Search through files
-map <F4> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
+map <F3> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
@@ -223,37 +226,37 @@ vnoremap <C-H> :<C-U>Hexmode<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""" Kivy for vim """"""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if version < 600
-  syntax clear
-elseif exists("b:current_syntax")
-  finish
-endif
+"if version < 600
+  "syntax clear
+"elseif exists("b:current_syntax")
+  "finish
+"endif
 
-syn match kivyPreProc       /#:.*/
-syn match kivyComment       /#.*/
-syn match kivyRule          /<\I\i*\(,\s*\I\i*\)*>:/
-syn match kivyAttribute     /\<\I\i*\>/ nextgroup=kivyValue
+"syn match kivyPreProc       /#:.*/
+"syn match kivyComment       /#.*/
+"syn match kivyRule          /<\I\i*\(,\s*\I\i*\)*>:/
+"syn match kivyAttribute     /\<\I\i*\>/ nextgroup=kivyValue
 
-syn include @pyth $VIMRUNTIME/syntax/python.vim
-syn region kivyValue start=":" end=/$/  contains=@pyth skipwhite
+"syn include @pyth $VIMRUNTIME/syntax/python.vim
+"syn region kivyValue start=":" end=/$/  contains=@pyth skipwhite
 
-syn region kivyAttribute matchgroup=kivyIdent start=/[\a_][\a\d_]*:/ end=/$/ contains=@pyth skipwhite
+"syn region kivyAttribute matchgroup=kivyIdent start=/[\a_][\a\d_]*:/ end=/$/ contains=@pyth skipwhite
 
-if version >= 508 || !exists("did_python_syn_inits")
-  if version <= 508
-    let did_python_syn_inits = 1
-    command -nargs=+ HiLink hi link <args>
-  else
-    command -nargs=+ HiLink hi def link <args>
-  endif
+"if version >= 508 || !exists("did_python_syn_inits")
+  "if version <= 508
+    "let did_python_syn_inits = 1
+    "command -nargs=+ HiLink hi link <args>
+  "else
+    "command -nargs=+ HiLink hi def link <args>
+  "endif
 
-    HiLink kivyPreproc      PreProc
-    HiLink kivyComment      Comment
-    HiLink kivyRule         Function
-    HiLink kivyIdent        Statement
-    HiLink kivyAttribute    Label
-  delcommand HiLink
-endif
+    "HiLink kivyPreproc      PreProc
+    "HiLink kivyComment      Comment
+    "HiLink kivyRule         Function
+    "HiLink kivyIdent        Statement
+    "HiLink kivyAttribute    Label
+  "delcommand HiLink
+"endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -283,15 +286,17 @@ if has('vim_starting')
 	NeoBundle 'scrooloose/nerdcommenter'
 	NeoBundle 'tpope/vim-obsession'
 	NeoBundle 'jiangmiao/auto-pairs'
+	NeoBundle 'dkprice/vim-easygrep'
+	NeoBundle 'tpope/vim-fugitive'
 	"
 	"Syntax support
 	"NeoBundleLazy 'scrooloose/syntastic'
 	NeoBundle 'tpope/vim-surround'
-	"NeoBundle 'ervandew/supertab'
-	"NeoBundleLazy 'nathanaelkane/vim-indent-guides'
+	NeoBundle 'ervandew/supertab'
+	"NeoBundle 'nathanaelkane/vim-indent-guides'
 	"NeoBundle 'Yggdroot/indentLine'
-	"NeoBundleLazy 'hublot/vim-gromacs'
-	"NeoBundleLazy 'Lokaltog/vim-easymotion'
+	"NeoBundle 'hublot/vim-gromacs'
+	"NeoBundle 'Lokaltog/vim-easymotion'
 	"
 	"Python support
 	NeoBundle 'klen/python-mode'
@@ -304,7 +309,7 @@ if has('vim_starting')
 	"NeoBundle 'garbas/vim-snipmate'
 	"NeoBundle 'MarcWeber/vim-addon-mw-utils'
 	"NeoBundle 'tomtom/tlib_vim'
-	NeoBundle 'honza/vim-snippets'
+	"NeoBundle 'honza/vim-snippets'
 	"
 	"Angular support
 	"NeoBundle 'burnettk/vim-angular'
@@ -336,6 +341,8 @@ NeoBundleCheck
 map <C-n> :NERDTreeToggle<CR>
 
 "Android SDK
-let g:android_sdk_path = "/home/quyngan/Android/android-sdk-linux"
-let g:gradle_path = "/home/quyngan/Android/android-studio/gradle"
+"let g:android_sdk_path = "/home/quyngan/Android/android-sdk-linux"
+"let g:gradle_path = "/home/quyngan/Android/android-studio/gradle"
 let g:pymode_lint_ignore = "E501, E265, E251"
+let g:ctrlp_working_path_mode = 'ra'
+let g:EasyGrepRoot = "search:.git,.svn"

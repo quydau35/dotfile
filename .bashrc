@@ -85,8 +85,8 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -l'
-alias la='ls -A'
+alias ll='ls -lh'
+alias la='ls -Ah'
 alias l='ls -CF'
 alias acpype='python /home/quyngan/Documents/vilas/vilas/vilas/source/acpype.py'
 
@@ -143,7 +143,7 @@ source /home/quyngan/.amber14/amber.sh
 export PATH=$PATH:/home/quyngan/.vmd/vmd-1.9.2
 # ADT path
 export PATH=$PATH:/home/quyngan/.mgltools-2_1.5.6/bin
-#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/quyngan/.mgltools-2_1.5.6/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/quyngan/.mgltools-2_1.5.6/lib
 
 # Android NDK/SDK/Studio v.v...
 #export ANDROIDSDK="/home/quyngan/Android/android-sdk-linux"
@@ -155,6 +155,9 @@ export PATH=$PATH:/home/quyngan/.mgltools-2_1.5.6/bin
 
 # JAVA 8 home
 #export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_60
+# java lejos lego mindstorm robot
+export EV3_HOME=/home/quyngan/Documents/mega/MEGAsync/Ephata/leJOS_EV3_0.9.1-beta
+export PATH=$PATH:/home/quyngan/Documents/mega/MEGAsync/Ephata/leJOS_EV3_0.9.1-beta/bin
 
 # Tmuxinator config
 export EDITOR='vim'
@@ -171,3 +174,6 @@ export PATH=$GOPATH:$GOPATH/bin:$PATH
 
 # unset LD_LIBRARY_PATH
 unset LD_LIBRARY_PATH
+
+# add TheFuck command =]]
+#eval "$(thefuck --alias)"
