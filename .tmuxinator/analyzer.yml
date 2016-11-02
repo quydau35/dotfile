@@ -29,10 +29,11 @@ root: ~/Documents/vilas/vilas/vilas
 
 windows:
   - editor:
-      layout: 5790,193x44,0,0{141x44,0,0,0,51x44,142,0[51x32,142,0,1,51x11,142,33,3]}
+      #layout: 5790,193x44,0,0{141x44,0,0,0,51x44,142,0[51x32,142,0,1,51x11,142,33,3]}
+      layout: 9bba,150x40,0,0{119x40,0,0,0,30x40,120,0,1}
       panes:
         - vim -S
         - ipython
-        - 
+  - test:
   #- server: bundle exec rails s
   #- logs: tail -f log/development.log

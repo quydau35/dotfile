@@ -343,6 +343,8 @@ map <C-n> :NERDTreeToggle<CR>
 "Android SDK
 "let g:android_sdk_path = "/home/quyngan/Android/android-sdk-linux"
 "let g:gradle_path = "/home/quyngan/Android/android-studio/gradle"
-let g:pymode_lint_ignore = "E501, E265, E251"
-let g:ctrlp_working_path_mode = 'ra'
+let g:pymode_lint_ignore = "E501, E265, E251, E116, E266"
+"let g:ctrlp_working_path_mode = 'cr'
 let g:EasyGrepRoot = "search:.git,.svn"
+"let g:ctrlp_working_path
+let g:ctrlp_working_path_mode = 'w'
