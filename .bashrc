@@ -111,7 +111,7 @@ if ! shopt -oq posix; then
 fi
 
 # GROMACS
-export PATH=$PATH:/usr/local/gromacs/bin
+#export PATH=$PATH:/usr/local/gromacs/bin
 
 ## AMD APP SDK
 #export AMDAPPSDKROOT=/opt/AMDAPP
@@ -120,30 +120,30 @@ export PATH=$PATH:/usr/local/gromacs/bin
 #export ATISTREAMSDKROOT=$AMDAPPSDKROOT
 
 # TeXlive package
-export MANPATH=/usr/local/texlive/2015/texmf-dist/doc/man:$MANPATH
-export INFOPATH=/usr/local/texlive/2015/texmf-dist/doc/info:$INFOPATH
-export PATH=$PATH:/usr/local/texlive/2015/bin/x86_64-linux
+#export MANPATH=/usr/local/texlive/2015/texmf-dist/doc/man:$MANPATH
+#export INFOPATH=/usr/local/texlive/2015/texmf-dist/doc/info:$INFOPATH
+#export PATH=$PATH:/usr/local/texlive/2015/bin/x86_64-linux
 
 # Opera
 #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu
 
 # Mendeley
-export PATH=$PATH:/home/quyngan/.mendeley/bin
+#export PATH=$PATH:/home/quyngan/.mendeley/bin
 
 # SCWRL4
 #export PATH=$PATH:/home/quyngan/.SCWRL4
 # GROMACS 5.1.1
 #source /usr/local/gromacs/bin/GMXRC
 #AMBER path
-export AMBERHOME=/home/quyngan/.amber14
-export PATH=$PATH:$AMBERHOME/bin
+#export AMBERHOME=/home/quyngan/.amber14
+#export PATH=$PATH:$AMBERHOME/bin
 # AMBERTOOL14
-source /home/quyngan/.amber14/amber.sh
+#source /home/quyngan/.amber14/amber.sh
 # VMD path
-export PATH=$PATH:/home/quyngan/.vmd/vmd-1.9.2
+#export PATH=$PATH:/home/quyngan/.vmd/vmd-1.9.2
 # ADT path
-export PATH=$PATH:/home/quyngan/.mgltools-2_1.5.6/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/quyngan/.mgltools-2_1.5.6/lib
+#export PATH=$PATH:/home/quyngan/.mgltools-2_1.5.6/bin
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/quyngan/.mgltools-2_1.5.6/lib
 
 # Android NDK/SDK/Studio v.v...
 #export ANDROIDSDK="/home/quyngan/Android/android-sdk-linux"
@@ -156,8 +156,8 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/quyngan/.mgltools-2_1.5.6/lib
 # JAVA 8 home
 #export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_60
 # java lejos lego mindstorm robot
-export EV3_HOME=/home/quyngan/Documents/mega/MEGAsync/Ephata/leJOS_EV3_0.9.1-beta
-export PATH=$PATH:/home/quyngan/Documents/mega/MEGAsync/Ephata/leJOS_EV3_0.9.1-beta/bin
+# export EV3_HOME=/home/quyngan/Documents/mega/MEGAsync/Ephata/leJOS_EV3_0.9.1-beta
+# export PATH=$PATH:/home/quyngan/Documents/mega/MEGAsync/Ephata/leJOS_EV3_0.9.1-beta/bin
 
 # Tmuxinator config
 export EDITOR='vim'
@@ -166,14 +166,18 @@ export EDITOR='vim'
 #export PATH=$PATH:/home/quyngan/opt/qcad-3.12.5-linux-x86_64
 
 # Add Eagle to path
-export PATH=$PATH:/home/quyngan/.eagle-7.6.0/bin
+# export PATH=$PATH:/home/quyngan/.eagle-7.6.0/bin
 
 # GOPATH for drive
-export GOPATH=$HOME/Documents/.Drive
-export PATH=$GOPATH:$GOPATH/bin:$PATH
+#export GOPATH=$HOME/Documents/.Drive
+#export PATH=$GOPATH:$GOPATH/bin:$PATH
 
 # unset LD_LIBRARY_PATH
-unset LD_LIBRARY_PATH
+#unset LD_LIBRARY_PATH
 
 # add TheFuck command =]]
 #eval "$(thefuck --alias)"
+
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
