@@ -288,6 +288,7 @@ if has('vim_starting')
 	NeoBundle 'jiangmiao/auto-pairs'
 	NeoBundle 'dkprice/vim-easygrep'
 	NeoBundle 'tpope/vim-fugitive'
+	NeoBundle 'mileszs/ack.vim'
 	"
 	"Syntax support
 	"NeoBundleLazy 'scrooloose/syntastic'
@@ -348,3 +349,7 @@ let g:pymode_lint_ignore = "E501, E265, E251, E116, E266"
 let g:EasyGrepRoot = "search:.git,.svn"
 "let g:ctrlp_working_path
 let g:ctrlp_working_path_mode = 'w'
+
+" Silver searcher (remember to install ag searcher: `sudo apt install
+" silversearcher-ag`)
+let g:ackprg = 'ag --nogroup --nocolor --column'
