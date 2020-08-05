@@ -116,7 +116,7 @@ set background=dark
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
 "set showmatch		" Show matching brackets.
-"set ignorecase		" Do case insensitive matching
+set ignorecase		" Do case insensitive matching
 "set smartcase		" Do smart case matching
 "set autowrite		" Automatically save before commands like :next and :make
 "set hidden		" Hide buffers when they are abandoned
@@ -291,7 +291,7 @@ if has('vim_starting')
 	NeoBundle 'mileszs/ack.vim'
 	"
 	"Syntax support
-	"NeoBundleLazy 'scrooloose/syntastic'
+	NeoBundle 'scrooloose/syntastic'
 	NeoBundle 'tpope/vim-surround'
 	NeoBundle 'ervandew/supertab'
 	"NeoBundle 'nathanaelkane/vim-indent-guides'
@@ -321,6 +321,9 @@ if has('vim_starting')
 	"NeoBundle 'mbrubeck/android-completion'
 	"NeoBundle 'hsanson/vim-android'
 	"
+	"VueJS support
+	NeoBundle 'leafoftree/vim-vue-plugin'
+	NeoBundle 'pangloss/vim-javascript'
 	"Latex support
 	"NeoBundleLazy 'vimsripts/latex-support.vim'
 	"NeoBundle 'vim-latex/vim-latex'
