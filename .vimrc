@@ -51,7 +51,7 @@ map Q gq
 inoremap <C-U> <C-G>u<C-U>
 
 " Search through files
-map <F3> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
+map <F3> :execute "Ack " . expand("<cword>") . " ./" <Bar> cw<CR>
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
@@ -295,7 +295,7 @@ if has('vim_starting')
 	NeoBundle 'tpope/vim-surround'
 	NeoBundle 'ervandew/supertab'
 	"NeoBundle 'nathanaelkane/vim-indent-guides'
-	"NeoBundle 'Yggdroot/indentLine'
+	NeoBundle 'yggdroot/indentline'
 	"NeoBundle 'hublot/vim-gromacs'
 	"NeoBundle 'Lokaltog/vim-easymotion'
 	"
@@ -340,7 +340,6 @@ filetype plugin indent on
 " If there are uninstalled bundles found on startup,
 " this will conveniently promp you to install them.
 NeoBundleCheck
-"let g:indentLine_color_term = 239
 
 map <C-n> :NERDTreeToggle<CR>
 
@@ -349,10 +348,14 @@ map <C-n> :NERDTreeToggle<CR>
 "let g:gradle_path = "/home/quyngan/Android/android-studio/gradle"
 let g:pymode_lint_ignore = "E501, E265, E251, E116, E266"
 "let g:ctrlp_working_path_mode = 'cr'
-let g:EasyGrepRoot = "search:.git,.svn"
 "let g:ctrlp_working_path
 let g:ctrlp_working_path_mode = 'w'
 
 " Silver searcher (remember to install ag searcher: `sudo apt install
 " silversearcher-ag`)
+let g:EasyGrepRoot = "search:.git,.svn"
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" Indent character
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+"let g:indentLine_color_term = 239
