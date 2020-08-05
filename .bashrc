@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=5000
-HISTFILESIZE=10000
+HISTSIZE=1000
+HISTFILESIZE=2000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -37,13 +37,13 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color) color_prompt=yes;;
+    xterm-color|*-256color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-force_color_prompt=yes
+#force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -57,7 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -77,18 +77,20 @@ if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     alias dir='dir --color=auto'
-    alias vdir='vdir --color=auto'
+    #alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+    #alias fgrep='fgrep --color=auto'
+    #alias egrep='egrep --color=auto'
 fi
 
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
 # some more ls aliases
-alias ll='ls -lh'
-alias la='ls -Ah'
+alias ll='ls -l'
+alias la='ls -A'
 alias l='ls -CF'
-alias acpype='python /home/quyngan/Documents/vilas/vilas/vilas/source/acpype.py'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -110,74 +112,28 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# GROMACS
-#export PATH=$PATH:/usr/local/gromacs/bin
+### JAVA environment variable
+export JAVA_HOME=$(update-alternatives --query javac | sed -n -e 's/Value: *\(.*\)\/bin\/javac/\1/p')
 
-## AMD APP SDK
-#export AMDAPPSDKROOT=/opt/AMDAPP
-#export AMDAPPSDKSAMPLESROOT=/opt/AMDAPP/
-#export LD_LIBRARY_PATH=${AMDAPPSDKROOT}lib/x86_64:$LD_LIBRARY_PATH
-#export ATISTREAMSDKROOT=$AMDAPPSDKROOT
+### Android SDK environment variables
+export ANDROID_HOME="/home/quyngan/Android/Sdk"
+export PATH="${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools"
+export PATH="$PATH:/home/quyngan/Downloads/android-studio/bin"
 
-# TeXlive package
-#export MANPATH=/usr/local/texlive/2015/texmf-dist/doc/man:$MANPATH
-#export INFOPATH=/usr/local/texlive/2015/texmf-dist/doc/info:$INFOPATH
-#export PATH=$PATH:/usr/local/texlive/2015/bin/x86_64-linux
-
-# Opera
-#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu
-
-# Mendeley
-#export PATH=$PATH:/home/quyngan/.mendeley/bin
-
-# SCWRL4
-#export PATH=$PATH:/home/quyngan/.SCWRL4
-# GROMACS 5.1.1
-#source /usr/local/gromacs/bin/GMXRC
-#AMBER path
-#export AMBERHOME=/home/quyngan/.amber14
-#export PATH=$PATH:$AMBERHOME/bin
-# AMBERTOOL14
-#source /home/quyngan/.amber14/amber.sh
-# VMD path
-#export PATH=$PATH:/home/quyngan/.vmd/vmd-1.9.2
-# ADT path
-#export PATH=$PATH:/home/quyngan/.mgltools-2_1.5.6/bin
-#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/quyngan/.mgltools-2_1.5.6/lib
-
-# Android NDK/SDK/Studio v.v...
-#export ANDROIDSDK="/home/quyngan/Android/android-sdk-linux"
-#export ANDROIDNDK="/home/quyngan/Android/android-ndk-r10e"
-#export ANDROIDNDKVER=r10e
-#export ADNROIDAPI=23
-#export PATH=$PATH:$ANDROIDNDK:$ANDROIDSDK/platform-tools:$ANDROIDSDK/tools
-#:/home/quyngan/Android/android-studio/bin/studio.sh
-
-# JAVA 8 home
-#export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_60
-# java lejos lego mindstorm robot
-# export EV3_HOME=/home/quyngan/Documents/mega/MEGAsync/Ephata/leJOS_EV3_0.9.1-beta
-# export PATH=$PATH:/home/quyngan/Documents/mega/MEGAsync/Ephata/leJOS_EV3_0.9.1-beta/bin
-
-# Tmuxinator config
-export EDITOR='vim'
-
-# Add QCAD to path
-#export PATH=$PATH:/home/quyngan/opt/qcad-3.12.5-linux-x86_64
-
-# Add Eagle to path
-# export PATH=$PATH:/home/quyngan/.eagle-7.6.0/bin
-
-# GOPATH for drive
-#export GOPATH=$HOME/Documents/.Drive
-#export PATH=$GOPATH:$GOPATH/bin:$PATH
-
-# unset LD_LIBRARY_PATH
-#unset LD_LIBRARY_PATH
-
-# add TheFuck command =]]
-#eval "$(thefuck --alias)"
-
-export GTK_IM_MODULE=ibus
+# Ibus setup environment
+export GTK_IM_MODULE=xim
+export QT_IM_MODULE=xim
 export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
+# Dành cho những phần mềm dựa trên qt4
+export QT4_IM_MODULE=xim
+# Dành cho những phần mềm dùng thư viện đồ họa clutter
+export CLUTTER_IM_MODULE=xim
+
+# tmuxinator env
+export EDITOR=vim
+
+# flutter environment variables
+export PATH="$PATH:/home/quyngan/Documents/flutter/bin"
+export PATH="$PATH:/usr/lib/dart/bin"
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
