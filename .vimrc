@@ -1,6 +1,9 @@
 "set wrap linebreak nolist  " list disables linebreak
 "set textwidth=80
 "set wrapmargin=1
+set encoding=utf-8
+set list
+set listchars=tab:→\ ,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
 set number
 set shiftwidth=4
 let mapleader=","
@@ -285,12 +288,16 @@ if has('vim_starting')
 	NeoBundle 'scrooloose/nerdtree'
 	NeoBundle 'scrooloose/nerdcommenter'
 	NeoBundle 'tpope/vim-obsession'
-	NeoBundle 'jiangmiao/auto-pairs'
-	NeoBundle 'dkprice/vim-easygrep'
-	NeoBundle 'tpope/vim-fugitive'
+	"NeoBundle 'dkprice/vim-easygrep'
 	NeoBundle 'mileszs/ack.vim'
+	NeoBundle 'vim-airline/vim-airline'
+	NeoBundle 'konfekt/fastfold'
+	"Git support
+	NeoBundle 'airblade/vim-gitgutter'
+	NeoBundle 'tpope/vim-fugitive'
 	"
 	"Syntax support
+	NeoBundle 'jiangmiao/auto-pairs'
 	NeoBundle 'scrooloose/syntastic'
 	NeoBundle 'tpope/vim-surround'
 	NeoBundle 'ervandew/supertab'
@@ -359,3 +366,21 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " Indent character
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 "let g:indentLine_color_term = 239
+
+" Fastfold:
+nmap zuz <Plug>(FastFoldUpdate)
+let g:fastfold_savehook = 1
+let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
+let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
+let g:markdown_folding = 1
+let g:tex_fold_enabled = 1
+let g:vimsyn_folding = 'af'
+let g:xml_syntax_folding = 1
+let g:javaScript_fold = 1
+let g:sh_fold_enabled= 7
+let g:ruby_fold = 1
+let g:perl_fold = 1
+let g:perl_fold_blocks = 1
+let g:r_syntax_folding = 1
+let g:rust_fold = 1
+let g:php_folding = 1
