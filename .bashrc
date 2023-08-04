@@ -112,28 +112,30 @@ if ! shopt -oq posix; then
   fi
 fi
 
-### JAVA environment variable
-export JAVA_HOME=$(update-alternatives --query javac | sed -n -e 's/Value: *\(.*\)\/bin\/javac/\1/p')
+# ### JAVA environment variable
+# export JAVA_HOME=$(update-alternatives --query javac | sed -n -e 's/Value: *\(.*\)\/bin\/javac/\1/p')
 
-### Android SDK environment variables
-export ANDROID_HOME="/home/quyngan/Android/Sdk"
-export PATH="${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools"
-export PATH="$PATH:/home/quyngan/Downloads/android-studio/bin"
+# ### Android SDK environment variables
+# export ANDROID_HOME="/home/quyngan/Android/Sdk"
+# export PATH="${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools"
+# export PATH="$PATH:/home/quyngan/Downloads/android-studio/bin"
 
-# Ibus setup environment
-export GTK_IM_MODULE=xim
-export QT_IM_MODULE=xim
-export XMODIFIERS=@im=ibus
-# Dành cho những phần mềm dựa trên qt4
-export QT4_IM_MODULE=xim
-# Dành cho những phần mềm dùng thư viện đồ họa clutter
-export CLUTTER_IM_MODULE=xim
+# # Ibus setup environment
+# export GTK_IM_MODULE=xim
+# export QT_IM_MODULE=xim
+# export XMODIFIERS=@im=ibus
+# # Dành cho những phần mềm dựa trên qt4
+# export QT4_IM_MODULE=xim
+# # Dành cho những phần mềm dùng thư viện đồ họa clutter
+# export CLUTTER_IM_MODULE=xim
 
 # tmuxinator env
 export EDITOR=vim
 
-# flutter environment variables
-export PATH="$PATH:/home/quyngan/Documents/flutter/bin"
-export PATH="$PATH:/usr/lib/dart/bin"
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+# # flutter environment variables
+# export PATH="$PATH:/home/quyngan/Documents/flutter/bin"
+# export PATH="$PATH:/usr/lib/dart/bin"
+
+# # thefuck command
+# . $HOME/.asdf/asdf.sh
+# . $HOME/.asdf/completions/asdf.bash
